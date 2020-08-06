@@ -8,5 +8,5 @@ class QuoteSpider(scrapy.Spider):
     ]
 
     def parse(self, response):
-        title = response.css("title").extract()
-        yield {"titletext": title}
+        title = response.css('title::text').extract()
+        yield {'titletext': title}
